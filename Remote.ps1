@@ -22,6 +22,9 @@ $a = $args.length
 
 $ip = [System.Net.Dns]::GetHostAddresses($server).IpAddressToString
 
+$oldname = $Host.UI.RawUI.WindowTitle
+$Host.UI.RawUI.WindowTitle = $server
+
 $inifile = $dir + "\Remote.ini"
 $ini = Get-IniContent $inifile
 
